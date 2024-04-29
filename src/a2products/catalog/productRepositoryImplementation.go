@@ -1,5 +1,7 @@
 package catalog
 
+import "strconv"
+
 // productRepository is the implementation of the repository
 type productRepositoryImplementation struct {
 }
@@ -13,8 +15,8 @@ func NewProductRepositoryImplementation() ProductRepository {
 func (p productRepositoryImplementation) GetAllProducts() []Product {
 	var products []Product
 
-	for i := 0; i < 10; i++ {
-		products = append(products, NewProduct(string(i), 5644.8, "Product # "+string(i)))
+	for i := 1; i <= 10; i++ {
+		products = append(products, NewProduct(strconv.Itoa(i), 5644.8, "Product #"+strconv.Itoa(i)))
 	}
 
 	return products
