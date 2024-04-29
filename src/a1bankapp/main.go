@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bankapp/transfers"
+	"a1bankapp/transfers"
 	"fmt"
 	"time"
 )
