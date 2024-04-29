@@ -1,4 +1,4 @@
-package main
+package catalog
 
 // productRepository is the implementation of the repository
 type productRepositoryImplementation struct {

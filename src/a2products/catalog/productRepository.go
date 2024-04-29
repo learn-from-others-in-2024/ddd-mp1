@@ -1,4 +1,4 @@
-package main
+package catalog
 
 // ProductRepository defines all functionalities in a repository
 type ProductRepository interface {
