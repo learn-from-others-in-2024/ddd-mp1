@@ -8,13 +8,9 @@ import (
 // main is the start point
 func main() {
 
-	sells := cat.NewSells(cat.NewProductRepositoryImplementation())
-	products := sells.ListProducts()
+	sells := cat.NewSells("123", "987", cat.NewProductRepositoryImplementation(), cat.NewCustomerRepositoryImplementation())
 
-	fmt.Println("List of products:")
+	fmt.Println("Information about a bill: ")
+	sells.GenerateBill()
 
-	fmt.Println("ID - Name - Price")
-	for _, v := range products {
-		fmt.Printf("%s - %s - %f\n \n", v.Id, v.Name, v.Price)
-	}
 }
