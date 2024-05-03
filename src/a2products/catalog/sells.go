@@ -11,7 +11,7 @@ type Sells struct {
 }
 
 // NewSells is the only way to create a sells object
-func NewSells(productId string, customerId string, productRepository ProductRepository, customerRepository CustomerRepository) Sells {
+func NewSells(productId, customerId string, productRepository ProductRepository, customerRepository CustomerRepository) Sells {
 	sells := Sells{}
 	sells.productRepository = productRepository
 	sells.customerRepository = customerRepository
@@ -19,9 +19,10 @@ func NewSells(productId string, customerId string, productRepository ProductRepo
 	return sells
 }
 
-// GenerateBill generates a bill based on the information generated previously
-func (c *Sells) GenerateBill() {
-	fmt.Printf("Generating bill for customer %v whose name is %v. The product is %v and its price is %v", c.customer.customerId, c.customer.name.firstName, c.product.name, c.product.price.value)
+// GenerateBill generates a bill based on the information generated previously and sends an email to the customer
+func (c *Sells) GenerateBill(emailImplementation EmailSender) {
+	fmt.Printf("Generating bill for customer %v whose name is %v. The product is %v and its price is %v \n", c.customer.customerId, c.customer.name.firstName, c.product.name, c.product.price.value)
+	emailImplementation.SendEmail(c.customer, c.product)
 }
 
 // createBillInformation is a custom implementation of an aggregate
