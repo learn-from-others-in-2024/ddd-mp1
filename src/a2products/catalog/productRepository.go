@@ -3,6 +3,6 @@ package catalog
 // ProductRepository defines all functionalities in a repository
 type ProductRepository interface {
 
-	// GetAllProducts allows to search for all products
-	GetAllProducts() []Product
+	// GetProductInformation allows to search for a particular product
+	GetProductInformation(productId string) *Product
 }
