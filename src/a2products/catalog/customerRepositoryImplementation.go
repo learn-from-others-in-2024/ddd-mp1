@@ -11,5 +11,5 @@ func NewCustomerRepositoryImplementation() CustomerRepository {
 
 // GetCustomerInformation allows to search for a particular customer
 func (c CustomerRepositoryImplementation) GetCustomerInformation(customerId string) *Customer {
-	return NewCustomer(customerId, "DDD", "Test")
+	return NewCustomer(customerId, "DDD", "Test", "dddTest@educative.com")
 }
