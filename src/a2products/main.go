@@ -11,6 +11,6 @@ func main() {
 	sells := cat.NewSells("123", "987", cat.NewProductRepositoryImplementation(), cat.NewCustomerRepositoryImplementation())
 
 	fmt.Println("Information about a bill: ")
-	sells.GenerateBill()
+	sells.GenerateBill(cat.NewEmailSender())
 
 }
